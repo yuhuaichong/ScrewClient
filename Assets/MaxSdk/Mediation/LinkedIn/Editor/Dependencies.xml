@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dependencies>
+    <androidPackages>
+        <androidPackage spec="com.applovin.dsp:linkedin-adapter:0.0.6.1" />
+    </androidPackages>
+    <iosPods>
+        <iosPod name="AppLovinDSPLinkedInAdapter" version="1.2.2.0"/>
+    </iosPods>
+</dependencies>

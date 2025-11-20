@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Screw
+  - Go
+  - Glass
+  - Ice
+  - Rope
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Glass1
+  - Glass2
+  - Glass3
+  - Glass4
+  - Glass5
+  - Glass6
+  - Glass7
+  - Glass8
+  - Glass9
+  - Glass10
+  - Glass11
+  - Glass12
+  - Glass13
+  - Glass14
+  - Glass15
+  - Glass16
+  - Glass17
+  - Glass18
+  - Glass19
+  - Glass20
+  - Glass21
+  - Glass22
+  - Glass23
+  - Glass24
+  - Building
+  - Screw
+  m_SortingLayers:
+  - name: UI
+    uniqueID: 2714341243
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Glass1
+    uniqueID: 312252547
+    locked: 0
+  - name: Glass2
+    uniqueID: 1431812145
+    locked: 0
+  - name: Glass3
+    uniqueID: 3884484991
+    locked: 0
+  - name: Glass4
+    uniqueID: 272715639
+    locked: 0
+  - name: Glass5
+    uniqueID: 2862108985
+    locked: 0
+  - name: Glass6
+    uniqueID: 2934947995
+    locked: 0
+  - name: Glass7
+    uniqueID: 2855314459
+    locked: 0
+  - name: Glass8
+    uniqueID: 3453393671
+    locked: 0
+  - name: Glass9
+    uniqueID: 1035493839
+    locked: 0
+  - name: Glass10
+    uniqueID: 2074989539
+    locked: 0
+  - name: Glass11
+    uniqueID: 2833760441
+    locked: 0
+  - name: Glass12
+    uniqueID: 2392858047
+    locked: 0
+  - name: Glass13
+    uniqueID: 2828248653
+    locked: 0
+  - name: Glass14
+    uniqueID: 3748044781
+    locked: 0
+  - name: Glass15
+    uniqueID: 4216705801
+    locked: 0
+  - name: Glass16
+    uniqueID: 225976377
+    locked: 0
+  - name: Glass17
+    uniqueID: 2497148663
+    locked: 0
+  - name: Glass18
+    uniqueID: 3072341601
+    locked: 0
+  - name: Glass19
+    uniqueID: 4176641361
+    locked: 0
+  - name: Glass20
+    uniqueID: 1090851579
+    locked: 0
+  - name: Glass21
+    uniqueID: 2710371517
+    locked: 0
+  - name: Glass22
+    uniqueID: 1712180747
+    locked: 0
+  - name: Glass23
+    uniqueID: 1230457381
+    locked: 0
+  - name: Glass24
+    uniqueID: 532946787
+    locked: 0
+  - name: End
+    uniqueID: 3841063155
+    locked: 0
+  m_RenderingLayers:
+  - Default

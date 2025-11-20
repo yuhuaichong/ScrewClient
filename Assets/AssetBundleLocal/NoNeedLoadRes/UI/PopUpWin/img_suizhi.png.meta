@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: cf09d07c17217234c82892d255a2eefa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 610030884714467453
+    second: img_suizhi_0
+  - first:
+      213: 3880088235399126759
+    second: img_suizhi_1
+  - first:
+      213: 7895596129129995526
+    second: img_suizhi_2
+  - first:
+      213: 7128117257050669230
+    second: img_suizhi_3
+  - first:
+      213: 8081237802122661071
+    second: img_suizhi_4
+  - first:
+      213: -393214501686592244
+    second: img_suizhi_5
+  - first:
+      213: 8276329288809885533
+    second: img_suizhi_6
+  - first:
+      213: 8766462382349441285
+    second: img_suizhi_7
+  - first:
+      213: -5173821909132646495
+    second: img_suizhi_8
+  - first:
+      213: -402490620329860570
+    second: img_suizhi_9
+  - first:
+      213: 3839933246580248974
+    second: img_suizhi_10
+  - first:
+      213: -9113567434953085700
+    second: img_suizhi_11
+  - first:
+      213: -6863596042058589925
+    second: img_suizhi_12
+  - first:
+      213: 5393329801229422194
+    second: img_suizhi_13
+  - first:
+      213: 4869704789975952132
+    second: img_suizhi_14
+  - first:
+      213: -9098978942474205238
+    second: img_suizhi_15
+  - first:
+      213: 3516270374429251413
+    second: img_suizhi_16
+  - first:
+      213: -2113278192991581814
+    second: img_suizhi_17
+  - first:
+      213: -3784793651979128715
+    second: img_suizhi_18
+  - first:
+      213: -4959065067861518166
+    second: img_suizhi_19
+  - first:
+      213: -1380702322459129796
+    second: img_suizhi_20
+  - first:
+      213: 7981355236792638527
+    second: img_suizhi_21
+  - first:
+      213: 831885095779941464
+    second: img_suizhi_22
+  - first:
+      213: -563939115451017482
+    second: img_suizhi_23
+  - first:
+      213: 6764978429305495523
+    second: img_suizhi_24
+  - first:
+      213: -7609555699554880047
+    second: img_suizhi_25
+  - first:
+      213: 3635360382624280187
+    second: img_suizhi_26
+  - first:
+      213: 5844791920245868030
+    second: img_suizhi_27
+  - first:
+      213: 5566900108732358425
+    second: img_suizhi_28
+  - first:
+      213: 7067573462392143495
+    second: img_suizhi_29
+  - first:
+      213: -8011426348612492864
+    second: img_suizhi_30
+  - first:
+      213: 7727516189909946124
+    second: img_suizhi_31
+  - first:
+      213: -1036206202421337973
+    second: img_suizhi_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: img_suizhi_0
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1442
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d705c698bd3477800800000000000000
+      internalID: 610030884714467453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_1
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1456
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee132841b7d8d530800000000000000
+      internalID: 3880088235399126759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_2
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1435
+        width: 250
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d1eb6c8dac29d60800000000000000
+      internalID: 7895596129129995526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_3
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1445
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea046dff0e82ce260800000000000000
+      internalID: 7128117257050669230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_4
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1347
+        width: 141
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcccafcf6f2562070800000000000000
+      internalID: 8081237802122661071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_5
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1365
+        width: 61
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d307a7e750b8af0800000000000000
+      internalID: -393214501686592244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_6
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1387
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5faca763ad6bd270800000000000000
+      internalID: 8276329288809885533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_7
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1303
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50953cc071bb8a970800000000000000
+      internalID: 8766462382349441285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_8
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1278
+        width: 64
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7e30fb264e238b0800000000000000
+      internalID: -5173821909132646495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_9
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1245
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622efcdc9e01a6af0800000000000000
+      internalID: -402490620329860570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_10
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1190
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81d0a361fe2a4530800000000000000
+      internalID: 3839933246580248974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_11
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1176
+        width: 53
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfcad0324ba168180800000000000000
+      internalID: -9113567434953085700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1048
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19125fb3cb9fb0a0800000000000000
+      internalID: -6863596042058589925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_13
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 1063
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ecece01e4f8da40800000000000000
+      internalID: 5393329801229422194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_14
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 910
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40be887a4baa49340800000000000000
+      internalID: 4869704789975952132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_15
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 932
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7c01b3cdee9b180800000000000000
+      internalID: -9098978942474205238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_16
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 851
+        width: 60
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557d51a864d4cc030800000000000000
+      internalID: 3516270374429251413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_17
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 677
+        width: 151
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89482b1ea02ca2e0800000000000000
+      internalID: -2113278192991581814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_18
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 735
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57071a9e936b97bc0800000000000000
+      internalID: -3784793651979128715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_19
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 651
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8d014589cdd2bb0800000000000000
+      internalID: -4959065067861518166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_20
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 564
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3844419d82c6dce0800000000000000
+      internalID: -1380702322459129796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_21
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 345
+        width: 206
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c9a330d4873ce60800000000000000
+      internalID: 7981355236792638527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_22
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 553
+        width: 57
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85cb7eb46137b8b00800000000000000
+      internalID: 831885095779941464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_23
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 545
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f61894cc5c7c28f0800000000000000
+      internalID: -563939115451017482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_24
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 549
+        width: 149
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef1feff90802ed50800000000000000
+      internalID: 6764978429305495523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_25
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 491
+        width: 64
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d57b7d886d656690800000000000000
+      internalID: -7609555699554880047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 145
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e29dcc105637230800000000000000
+      internalID: 3635360382624280187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_27
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 436
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef50450d84fdc1150800000000000000
+      internalID: 5844791920245868030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_28
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 378
+        width: 76
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f5319772a914d40800000000000000
+      internalID: 5566900108732358425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_29
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 363
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e7cd15e90151260800000000000000
+      internalID: 7067573462392143495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_30
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 338
+        width: 35
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c16fbaae22b1d090800000000000000
+      internalID: -8011426348612492864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_31
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 228
+        width: 83
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f89a75807ad3b60800000000000000
+      internalID: 7727516189909946124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: img_suizhi_32
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 159
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80ae9ee2f7ae91f0800000000000000
+      internalID: -1036206202421337973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      img_suizhi_0: 610030884714467453
+      img_suizhi_1: 3880088235399126759
+      img_suizhi_10: 3839933246580248974
+      img_suizhi_11: -9113567434953085700
+      img_suizhi_12: -6863596042058589925
+      img_suizhi_13: 5393329801229422194
+      img_suizhi_14: 4869704789975952132
+      img_suizhi_15: -9098978942474205238
+      img_suizhi_16: 3516270374429251413
+      img_suizhi_17: -2113278192991581814
+      img_suizhi_18: -3784793651979128715
+      img_suizhi_19: -4959065067861518166
+      img_suizhi_2: 7895596129129995526
+      img_suizhi_20: -1380702322459129796
+      img_suizhi_21: 7981355236792638527
+      img_suizhi_22: 831885095779941464
+      img_suizhi_23: -563939115451017482
+      img_suizhi_24: 6764978429305495523
+      img_suizhi_25: -7609555699554880047
+      img_suizhi_26: 3635360382624280187
+      img_suizhi_27: 5844791920245868030
+      img_suizhi_28: 5566900108732358425
+      img_suizhi_29: 7067573462392143495
+      img_suizhi_3: 7128117257050669230
+      img_suizhi_30: -8011426348612492864
+      img_suizhi_31: 7727516189909946124
+      img_suizhi_32: -1036206202421337973
+      img_suizhi_4: 8081237802122661071
+      img_suizhi_5: -393214501686592244
+      img_suizhi_6: 8276329288809885533
+      img_suizhi_7: 8766462382349441285
+      img_suizhi_8: -5173821909132646495
+      img_suizhi_9: -402490620329860570
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

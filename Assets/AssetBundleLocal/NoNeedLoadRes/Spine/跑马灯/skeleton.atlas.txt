@@ -1,0 +1,11 @@
+skeleton.png
+size:1317,1317
+filter:Linear,Linear
+分组110
+bounds:1157,1228,89,89
+offsets:33,33,151,163
+分组17
+bounds:0,0,160,160
+offsets:14,9,188,181
+边框
+bounds:0,162,1155,1155

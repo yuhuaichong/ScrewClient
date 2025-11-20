@@ -1,0 +1,8 @@
+skeleton.png
+size:518,518
+filter:Linear,Linear
+pma:true
+扫光
+bounds:2,203,234,155
+钱币-btn
+bounds:2,360,514,156

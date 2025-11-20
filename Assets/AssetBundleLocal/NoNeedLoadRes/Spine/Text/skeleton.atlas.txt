@@ -1,0 +1,78 @@
+skeleton.png
+size:305,305
+filter:Linear,Linear
+pma:true
+图层 11
+bounds:234,72,43,43
+offsets:149,149,341,341
+图层 12
+bounds:208,25,42,45
+offsets:149,148,341,341
+图层 13
+bounds:185,72,43,47
+offsets:149,147,341,341
+rotate:90
+图层 14
+bounds:132,72,43,51
+offsets:149,145,341,341
+rotate:90
+图层 15
+bounds:109,16,43,54
+offsets:149,144,341,341
+图层 16
+bounds:241,215,42,57
+offsets:149,142,341,341
+rotate:90
+图层 17
+bounds:241,259,44,61
+offsets:148,140,341,341
+rotate:90
+图层 18
+bounds:239,168,45,64
+offsets:148,139,341,341
+rotate:90
+图层 19
+bounds:61,3,46,67
+offsets:147,137,341,341
+图层 20
+bounds:61,143,48,70
+offsets:146,136,341,341
+rotate:90
+图层 21
+bounds:223,117,49,73
+offsets:146,134,341,341
+rotate:90
+图层 22
+bounds:144,142,50,77
+offsets:145,132,341,341
+rotate:90
+图层 23
+bounds:61,193,52,81
+offsets:144,130,341,341
+rotate:90
+图层 24
+bounds:153,194,53,84
+offsets:144,129,341,341
+rotate:90
+图层 25
+bounds:153,249,54,86
+offsets:143,128,341,341
+rotate:90
+图层 26
+bounds:61,247,56,90
+offsets:142,126,341,341
+rotate:90
+图层 27
+bounds:2,211,57,92
+offsets:142,125,341,341
+图层 28
+bounds:2,117,57,92
+offsets:142,125,341,341
+图层 29
+bounds:2,23,57,92
+offsets:142,125,341,341
+圆形 10
+bounds:61,72,69,69
+并集
+bounds:154,18,52,52
+offsets:15,16,84,83

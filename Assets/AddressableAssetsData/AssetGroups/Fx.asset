@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Fx
+  m_EditorClassIdentifier: 
+  m_GroupName: Fx
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 02d736df00920864d82dd8358d6c1b4e
+  m_SerializeEntries:
+  - m_GUID: 67764549ceeb406cbd9fa6ee6e7bcf41
+    m_Address: chain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Fx
+  - m_GUID: ade0fb930ac7b8043bb7587a8ff71dde
+    m_Address: Effect Appear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Fx
+  - m_GUID: ac39ed003da315a4791c30136272ba77
+    m_Address: Expolosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Fx
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2544409b6a867e4ea6e197d828b9fd6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7a43d7c3c4ace114a9c7039c0e5b126a, type: 2}
+    - {fileID: 11400000, guid: 7167499a76d349a48912a190da0d1677, type: 2}

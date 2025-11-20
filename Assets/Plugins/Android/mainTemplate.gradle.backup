@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+apply from: '../shared/keepUnitySymbols.gradle'
+**APPLY_PLUGINS**
+
+dependencies {
+implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+implementation files('libs/kwai_adApi_release_v1.2.20_202508060840.aar')
+implementation files('libs/kwai_adImpl_release_v1.2.20_202508060841.aar')
+implementation files('libs/kwai_maxAdapter_release_v1.2.20_202508060846.aar')
+
+// Android Resolver Dependencies Start
+    implementation 'androidx.recyclerview:recyclerview:1.2.1' // Assets/MaxSdk/Mediation/Mintegral/Editor/Dependencies.xml:9
+    implementation 'com.android.support:customtabs:28.+' // Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml:7
+    implementation 'com.android.support:recyclerview-v7:28.+' // Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml:6
+    implementation 'com.applovin.mediation:bigoads-adapter:5.5.1.2' // Assets/MaxSdk/Mediation/BigoAds/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:bytedance-adapter:7.5.0.2.0' // Assets/MaxSdk/Mediation/ByteDance/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:chartboost-adapter:9.9.3.0' // Assets/MaxSdk/Mediation/Chartboost/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:facebook-adapter:[6.20.0.0]' // Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:fyber-adapter:8.3.8.0' // Assets/MaxSdk/Mediation/Fyber/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:google-adapter:[24.5.0.0]' // Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml:5
+    implementation 'com.applovin.mediation:inmobi-adapter:10.8.7.0' // Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:ironsource-adapter:8.11.0.0.0' // Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:mintegral-adapter:16.9.91.0' // Assets/MaxSdk/Mediation/Mintegral/Editor/Dependencies.xml:8
+    implementation 'com.applovin.mediation:unityads-adapter:4.16.1.0' // Assets/MaxSdk/Mediation/UnityAds/Editor/Dependencies.xml:4
+    implementation 'com.applovin.mediation:vungle-adapter:7.5.1.0' // Assets/MaxSdk/Mediation/Vungle/Editor/Dependencies.xml:4
+    implementation 'com.applovin:applovin-sdk:13.3.1' // Assets/MaxSdk/AppLovin/Editor/Dependencies.xml:4
+    implementation 'com.google.android.gms:play-services-base:16.1.0' // Assets/MaxSdk/Mediation/Chartboost/Editor/Dependencies.xml:9
+    implementation 'com.google.android.play:core-common:2.0.4' // Assets/GooglePlayPlugins/com.google.play.core/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:review:2.0.2' // Assets/GooglePlayPlugins/com.google.play.review/Editor/Dependencies.xml:3
+    implementation 'com.squareup.picasso:picasso:2.71828' // Assets/MaxSdk/Mediation/InMobi/Editor/Dependencies.xml:5
+
+
+
+implementation "androidx.media3:media3-exoplayer:1.0.0-alpha01"
+implementation "androidx.appcompat:appcompat:1.2.0"
+implementation "com.google.android.material:material:1.2.1"
+implementation "androidx.annotation:annotation:1.2.0"
+// 最低支持 kotlin1.4.10 | Minimum support kotlin1.4.10
+implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
+// gaid 最低支持play-services-ads-identifier:18.0.1 | gaid minimum support play-services-ads-identifier:18.0.1
+implementation "com.google.android.gms:play-services-ads-identifier:18.0.1"
+
+// Android Resolver Dependencies End
+**DEPS**}
+
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    namespace "com.unity3d.player"
+    ndkPath "**NDKPATH**"
+    ndkVersion "**NDKVERSION**"
+
+    compileSdk **APIVERSION**
+    buildToolsVersion = "**BUILDTOOLS**"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdk **MINSDK**
+        targetSdk **TARGETSDK**
+        ndk {
+            abiFilters **ABIFILTERS**
+            debugSymbolLevel **DEBUGSYMBOLLEVEL**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
+**DEFAULT_CONFIG_SETUP**
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**PACKAGING**
+}
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**

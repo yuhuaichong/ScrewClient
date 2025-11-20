@@ -1,0 +1,3467 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GUPS.Assets.Editor</name>
+    </assembly>
+    <members>
+        <member name="T:GUPS.Assets.Editor.Compression.CompressionType">
+            <summary>
+            The supported compression types of unity.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Compression.CompressionType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Compression.CompressionType.Lzma">
+            <summary>
+            The Lzma compression.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Compression.CompressionType.Lz4">
+            <summary>
+            The Lz4 compression.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Compression.CompressionType.Lz4HC">
+            <summary>
+            The Lz4HC compression.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Compression.CompressionType.Lzham">
+            <summary>
+            The Lzham compression.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Compression.Helper.CompressionHelper">
+            <summary>
+            Represents a helper class for Lz compression.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GUPS.Assets.Editor.Compression.Helper.CompressionHelper.Decompress(GUPS.Assets.Editor.Compression.CompressionType,System.Byte[],System.Int32)" -->
+        <member name="M:GUPS.Assets.Editor.Compression.Helper.CompressionHelper.Compress(GUPS.Assets.Editor.Compression.CompressionType,System.Byte[])">
+            <summary>
+            Compresses the given data.
+            </summary>
+            <param name="_Type">The type of the compression.</param>
+            <param name="_Data">The data to compress.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException">Thrown when the compression type is not implemented.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the compression type is not supported.</exception>
+        </member>
+        <member name="T:GUPS.Assets.Editor.CRC.Crc32">
+            <summary>
+            Implements a 32-bit CRC hash algorithm compatible with Zip and other formats.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.DefaultPolynomial">
+            <summary>
+            The default polynomial used in CRC32 calculations.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.DefaultSeed">
+            <summary>
+            The default seed used in CRC32 calculations.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.defaultTable">
+            <summary>
+            The default table used for CRC32 calculations with the default polynomial.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.seed">
+            <summary>
+            The seed value used for initializing the CRC32 calculation.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.table">
+            <summary>
+            The table used for CRC32 calculations, initialized with the specified polynomial.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.CRC.Crc32.hash">
+            <summary>
+            The current hash value during the CRC32 calculation process.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.CRC.Crc32"/> class using the default polynomial and seed.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.CRC.Crc32"/> class with a specified polynomial and seed.
+            </summary>
+            <param name="polynomial">The polynomial to use in calculations.</param>
+            <param name="seed">The initial seed to start from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Initialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.HashFinal">
+            <inheritdoc/>
+        </member>
+        <member name="P:GUPS.Assets.Editor.CRC.Crc32.HashSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.Byte[])">
+            <summary>
+            Calculates the CRC32 for a given buffer using the default seed and polynomial.
+            </summary>
+            <param name="buffer">The byte array buffer to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.Byte[])">
+            <summary>
+            Calculates the CRC32 for a given buffer using a specified seed and the default polynomial.
+            </summary>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The byte array buffer to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.UInt32,System.Byte[])">
+            <summary>
+            Calculates the CRC32 for a given buffer using a specified seed and polynomial.
+            </summary>
+            <param name="polynomial">The polynomial to use in calculations.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The byte array buffer to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Calculates the CRC32 for given buffers using the default seed and polynomial.
+            </summary>
+            <param name="buffers">The byte array buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Calculates the CRC32 for given buffers using a specified seed and the default polynomial.
+            </summary>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The byte array buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.UInt32,System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Calculates the CRC32 for given buffers using a specified seed and polynomial.
+            </summary>
+            <param name="polynomial">The polynomial to use in calculations.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The byte array buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.Collections.Generic.IList{GUPS.Assets.Editor.Numeric.LongArray{System.Byte}})">
+            <summary>
+            Calculates the CRC32 for given LongArray buffers using the default seed and polynomial.
+            </summary>
+            <param name="buffers">The LongArray byte buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.Collections.Generic.IList{GUPS.Assets.Editor.Numeric.LongArray{System.Byte}})">
+            <summary>
+            Calculates the CRC32 for given LongArray buffers using a specified seed and the default polynomial.
+            </summary>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The LongArray byte buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.Compute(System.UInt32,System.UInt32,System.Collections.Generic.IList{GUPS.Assets.Editor.Numeric.LongArray{System.Byte}})">
+            <summary>
+            Calculates the CRC32 for given LongArray buffers using a specified seed and polynomial.
+            </summary>
+            <param name="polynomial">The polynomial to use in calculations.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The LongArray byte buffers to calculate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.InitializeTable(System.UInt32)">
+            <summary>
+            Initializes a CRC32 calculation table for a given polynomial.
+            </summary>
+            <param name="polynomial">The polynomial to calculate a table for.</param>
+            <returns>A UInt32 array table to be used in calculating a CRC32.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.CalculateHash(System.UInt32[],System.UInt32,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32)">
+            <summary>
+            Calculates an inverted CRC32 for a given buffer using a polynomial-derived table.
+            </summary>
+            <param name="table">The polynomial-derived table, such as from <see cref="M:GUPS.Assets.Editor.CRC.Crc32.InitializeTable(System.UInt32)"/>.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The byte array buffer to calculate the CRC32 from.</param>
+            <param name="start">The position within the buffer to start calculating from.</param>
+            <param name="size">The number of bytes within the buffer to read in calculating the CRC32.</param>
+            <returns>The bit-inverted CRC32 result.</returns>
+            <remarks>
+            <para>
+            This hash is bit-inverted. Use other methods in this class or apply the bitwise NOT operator (~) on the result from this method.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.CalculateHash(System.UInt32[],System.UInt32,System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Calculates an inverted CRC32 for given buffers using a polynomial-derived table.
+            </summary>
+            <param name="table">The polynomial-derived table, such as from <see cref="M:GUPS.Assets.Editor.CRC.Crc32.InitializeTable(System.UInt32)"/>.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The byte array buffers to calculate the CRC32 from.</param>
+            <returns>The bit-inverted CRC32 result.</returns>
+            <remarks>
+            <para>
+            This hash is bit-inverted. Use other methods in this class or apply the bitwise NOT operator (~) on the result from this method.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.CalculateHash(System.UInt32[],System.UInt32,GUPS.Assets.Editor.Numeric.LongArray{System.Byte},System.Int64,System.Int64)">
+            <summary>
+            Calculates an inverted CRC32 for a given LongArray buffer using a polynomial-derived table.
+            </summary>
+            <param name="table">The polynomial-derived table.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The LongArray byte buffer to calculate the CRC32 from.</param>
+            <param name="start">The position within the buffer to start calculating from.</param>
+            <param name="size">The number of bytes within the buffer to read in calculating the CRC32.</param>
+            <returns>The bit-inverted CRC32 result.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.CalculateHash(System.UInt32[],System.UInt32,System.Collections.Generic.IList{GUPS.Assets.Editor.Numeric.LongArray{System.Byte}})">
+            <summary>
+            Calculates an inverted CRC32 for given LongArray buffers using a polynomial-derived table.
+            </summary>
+            <param name="table">The polynomial-derived table.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffers">The LongArray byte buffers to calculate the CRC32 from.</param>
+            <returns>The bit-inverted CRC32 result.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.CRC.Crc32.UInt32ToBigEndianBytes(System.UInt32)">
+            <summary>
+            Converts a UInt32 to a byte array, taking care to reverse the bytes on little-endian processors.
+            </summary>
+            <param name="uint32">The UInt32 to convert.</param>
+            <returns>The byte array containing the converted bytes.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions">
+            <summary>
+            Contains cache information to be used by the AssetBundleProvider
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions.m_Crc">
+            <summary>
+            Returns the CRC of the AssetBundle.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions.Load(System.String)">
+            <summary>
+            Load a <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions"/> from a JSON string./>
+            </summary>
+            <param name="_Json">The json string to load from.</param>
+            <returns>The loaded <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions"/>.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions.Save">
+            <summary>
+            Save the <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetBundleRequestOptions"/> to a JSON string.
+            </summary>
+            <returns>The JSON string.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetLoadMode">
+            <summary>
+            Used to indication how Assets are loaded from the AssetBundle on the first load request.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetLoadMode.RequestedAssetAndDependencies">
+            <summary>
+            Only load the requested Asset and Dependencies
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.AssetLoadMode.AllPackedAssetsAndDependencies">
+            <summary>
+            Load all assets inside the AssetBundle
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile">
+            <summary>
+            Internally named ContectCatalogData in Unity Addressables.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.m_InstanceProviderData">
+            <summary>
+            Data for the Addressables.ResourceManager.InstanceProvider initialization;
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.m_SceneProviderData">
+            <summary>
+            Data for the Addressables.ResourceManager.InstanceProvider initialization;
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.m_ResourceProviderData">
+            <summary>
+            The list of resource provider data. Each entry will add an IResourceProvider to the Addressables.ResourceManager.ResourceProviders list.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.ReplaceCrcForFile(System.String,System.UInt32,System.UInt32)" -->
+        <member name="M:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.Load(System.String)">
+            <summary>
+            Load a <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile"/> from a JSON string.
+            </summary>
+            <param name="_Json">The json string to load from.</param>
+            <returns>The loaded <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile"/>.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile.Save">
+            <summary>
+            Save the <see cref="T:GUPS.Assets.Editor.Files.Addressable.Catalog.CatalogFile"/> to a JSON string.
+            </summary>
+            <returns>The JSON string.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Catalog.ObjectInitialization">
+            <summary>
+            Contains data used to construct and initialize objects at runtime.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.ObjectInitialization.m_Id">
+            <summary>
+            The id of the object.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.ObjectInitialization.m_ObjectType">
+            <summary>
+            The type of the object (assembly and class name).
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.ObjectInitialization.m_Data">
+            <summary>
+            The data used to initialize the object.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Catalog.SerializedRuntimeType">
+            <summary>
+            Wrapper for serializing types for runtime.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.SerializedRuntimeType.m_AssemblyName">
+            <summary>
+            The assembly name.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Addressable.Catalog.SerializedRuntimeType.m_ClassName">
+            <summary>
+            The class name.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Addressable.Helper.ByteHelper">
+            <summary>
+            Helper class for byte arrays.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Addressable.Helper.ByteHelper.FindNthPosition(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Finds the nth occurrence of a byte array in another byte array.
+            </summary>
+            <param name="haystack">The byte array to search within.</param>
+            <param name="needle">The byte array to find.</param>
+            <param name="n">The occurrence number to find (Starting at 1).</param>
+            <returns>The index of the nth occurrence of the needle in the haystack, or -1 if not found.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the haystack or needle is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the haystack or needle is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the occurrence number is not positive.</exception>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo">
+            <summary>
+            Represents the storage blocks information for a bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.UncompressedDataHash">
+            <summary>
+            The hash of the uncompressed data. Always filed with zeros only.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.StorageBlocks">
+            <summary>
+            The storage blocks represent information about the referenced files in the bundle.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.#ctor">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo"/> object. Used for reading.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.#ctor(System.Guid,GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo[])">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo"/> object using custom values.
+            </summary>
+            <param name="_UncompressedDataHash"></param>
+            <param name="_StorageBlocks"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the data from the reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.BundleFileBlocksInfo.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the data to the writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo">
+            <summary>
+            A storage block contains information about the compressed and uncompressed size of a block of data.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.BLOCK_SIZE">
+            <summary>
+            A storage block has the max size of 128 KB (131072 Bytes).
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.UncompressedSize">
+            <summary>
+            The uncompressed size of the block in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.CompressedSize">
+            <summary>
+            The compressed size of the block in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.Flags">
+            <summary>
+            The flags of the storage block.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.CompressionType">
+            <summary>
+            Get if the block is compressed or not. Either None or Lz4HC
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.IsCompressed">
+            <summary>
+            Returns whether the block is compressed or not.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.#ctor">
+            <summary>
+            Instantiates a new empty <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo"/>. Read from a reader to fill the values.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.#ctor(System.UInt32)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo"/> with the size of the block. Creates an uncompressed block info with no flags.
+            </summary>
+            <param name="_Size">The size of the block.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.#ctor(System.UInt32,System.UInt32,GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo"/> with the uncompressed and compressed size of the block and the flags.
+            </summary>
+            <param name="_UncompressedSize"></param>
+            <param name="_CompressedSize"></param>
+            <param name="_Flags"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Reads the storage block from the reader.
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Writes the storage block to the writer.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo.ToString">
+            <summary>
+            Get the string representation of the storage block.
+            </summary>
+            <returns>The string representation of the storage block.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags">
+            <summary>
+            Flags for a storage block. A storage block can either be compressed or uncompressed and/or streamed or not streamed.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags.None">
+            <summary>
+            No flags set. In binary: 0b00000000.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags.CompressionTypeMask">
+            <summary>
+            Is compressed. In binary: 0b00111111.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags.Streamed">
+            <summary>
+            Is a streamed block. In binary: 0b01000000.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockFlagsExtensions">
+            <summary>
+            Extension methods for <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags"/>.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockFlagsExtensions.GetCompression(GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags)">
+            <summary>
+            Extracts the compression type from the flags.
+            </summary>
+            <param name="_this">The flags.</param>
+            <returns>The compression type.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockFlagsExtensions.IsStreamed(GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfoFlags)">
+            <summary>
+            Gets whether the block is streamed.
+            </summary>
+            <param name="_this">The flags.</param>
+            <returns>True if the block is streamed; otherwise, false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader">
+            <summary>
+            The storage block reader is used to read the raw storage block data from the storage blocks.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader.reader">
+            <summary>
+            The endian binary reader to read the storage blocks from.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader.#ctor(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader"/> with the reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader.Read(GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo)">
+            <summary>
+            Read the storage block raw data and decompress it if necessary. The uncompressed returned block is maximal 128 KB (131072 Bytes).
+            </summary>
+            <param name="_StorageBlockInfo">The storage block info to read the data for.</param>
+            <returns>The raw storage block data.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockReader.Dispose">
+            <summary>
+            Releases the resources.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter">
+            <summary>
+            Write binary into storage blocks and compress them, if required.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.writer">
+            <summary>
+            The endian binary writer to write the storage blocks to.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.compressionType">
+            <summary>
+            The compression type to compress the storage blocks with.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.block">
+            <summary>
+            The current block to write to.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.blockByteOffset">
+            <summary>
+            The current byte offset in the block.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.storageBlockInfos">
+            <summary>
+            The resulting storage block infos.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.isDisposed">
+            <summary>
+            Indicates if the object is disposed.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.#ctor(GUPS.Assets.Editor.IO.EndianBinaryWriter,GUPS.Assets.Editor.Compression.CompressionType)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter"/> with the writer and compression type.
+            </summary>
+            <param name="_Writer"></param>
+            <param name="_CompressionType"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Write(GUPS.Assets.Editor.Numeric.LongArray{System.Byte})">
+            <summary>
+            Writes the resource binary to the storage blocks. When finished, call <see cref="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Flush"/> to get the storage blocks.
+            </summary>
+            <param name="_ResourceBinary">The resource binary to write to the storage blocks.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Write(System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Writes the resource binary to the storage blocks. When finished, call <see cref="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Flush"/> to get the storage blocks.
+            </summary>
+            <param name="_ResourceBinary">The resource binary to write to the storage blocks.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Write(System.Byte[])">
+            <summary>
+            Writes the resource binary to the storage blocks. When finished, call <see cref="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Flush"/> to get the storage blocks.
+            </summary>
+            <param name="_ResourceBinary">The resource binary to write to the storage blocks.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Write(System.IO.Stream)">
+            <summary>
+            Writes a single resource stream to the storage blocks. When finished, call <see cref="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Flush"/> to get the storage blocks.
+            </summary>
+            <param name="_ResourceStream">The stream to write to the storage blocks.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.WriteBlock">
+            <summary>
+            Write the current block to the writer, add the storage block info and reset the block.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Flush">
+            <summary>
+            Returns the storage block infos and flushes the last block.
+            </summary>
+            <returns>Returns a list of all storage block infos.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockWriter.Dispose">
+            <summary>
+            Releases the resources.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.BundleFile">
+            <summary>
+            Represents a unity bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.BundleFile.Header">
+            <summary>
+            Contains the header information.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.BundleFile.BlocksInfo">
+            <summary>
+            Contains information about the storage blocks. Each resource in the bundle is stored over multiple storage blocks.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.BundleFile.ResourcesInfo">
+            <summary>
+            Contains information about the resources in the bundle.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.BundleFile.Storage">
+            <summary>
+            Contains the resolved resources in the bundle.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.#ctor(GUPS.Assets.Editor.Files.UnityFileReader)">
+            <summary>
+            Read the bundle file data from the _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.CalculateCrc">
+            <summary>
+            Calculate the CRC32 of the bundle file.
+            </summary>
+            <returns>The CRC32 (UInt32).</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the bundle file data from the _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.ReadFileInfo(GUPS.Assets.Editor.IO.EndianBinaryReader,System.Int64)">
+            <summary>
+            Read the file infos from the _Reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+            <param name="_BasePosition">The base position of the reader.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.ReadFileInfo(System.IO.Stream,System.Int32)">
+            <summary>
+            Read the file info from the _Stream.
+            </summary>
+            <param name="_Stream">The stream to read from.</param>
+            <param name="_MetadataSize">The size of the metadata.</param>
+            <exception cref="T:System.Exception">Thrown if the read metadata size doesn't match the expected size.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.ReadFileData(GUPS.Assets.Editor.IO.EndianBinaryReader,System.Int64,System.Int64)">
+            <summary>
+            Read the file data from the _Reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+            <param name="_BasePosition">The base position of the reader.</param>
+            <param name="_HeaderSize">The size of the header.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.GetResource(System.String)">
+            <summary>
+            Get the resource binary with the _ResourcePath.
+            </summary>
+            <param name="_ResourcePath">The path of the resource inside the bundle.</param>
+            <returns>The binary of the resource. If the resource was not found returns null.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.GetResourceAsStream(System.String)">
+            <summary>
+            Get the resource as stream with the _ResourcePath as stream.
+            </summary>
+            <param name="_ResourcePath">The path of the resource inside the bundle.</param>
+            <returns>The binary of the resource as stream. If the resource was not found returns null.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.GetAllResourceInfos(GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag)">
+            <summary>
+            Get all the resource infos with the file _Type.
+            </summary>
+            <param name="_Type">The type of the resource.</param>
+            <returns>All the resource infos with the file _Type.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.ReplaceResource(System.String,GUPS.Assets.Editor.Numeric.LongArray{System.Byte})">
+            <summary>
+            Replace the resource with the _ResourcePath with the _ResourceData.
+            </summary>
+            <param name="_ResourcePath">The path of the resource inside the bundle to replace.</param>
+            <param name="_ResourceData">The new resource data.</param>
+            <returns>True if the resource is replaced, otherwise false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the bundle file data to the _Writer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.WriteStorage">
+            <summary>
+            Write the storage as bytes.
+            </summary>
+            <returns>The storage as bytes.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.WriteStorageBlockInfos">
+            <summary>
+            Write the storage block infos as bytes.
+            </summary>
+            <returns>The storage block infos as bytes.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.WriteResourceInfos">
+            <summary>
+            Write the resource infos as bytes.
+            </summary>
+            <returns>The resource infos as bytes.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.WriteHeader">
+            <summary>
+            Write the header as bytes.
+            </summary>
+            <returns>The header as bytes.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.CalculateFileSize(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            The header requires the file size. So pre-calculate the file size.
+            </summary>
+            <param name="_HeaderSize">The size of the header.</param>
+            <param name="_CompressedMetaSize">The size of the compressed metadata.</param>
+            <param name="_StorageSize">The size of the storage.</param>
+            <returns>The calculated file size.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.BundleFile.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter,System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Write the bundle file to the _Writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+            <param name="_Header">The header as bytes.</param>
+            <param name="_Metadata">The metadata as bytes.</param>
+            <param name="_Storage">The storage as bytes.</param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion">
+            <summary>
+            Version of a unity bundle file.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_100_250">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_260_340">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_350_4x">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_520a1">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_520aunk">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_520_x">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_LargeFilesSupport">
+            <summary>
+            Several 4-byte integers were upgraded to 8-byte integers in order to support files larger than 2 GB.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_2022_2">
+            <summary>
+            This seems to be exactly the same as <see cref="F:GUPS.Assets.Editor.Files.Bundle.BundleFileFormatVersion.BF_LargeFilesSupport"/>.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.BlockInfoNeedPaddingAtStart">
+            <summary>
+            Padding is added after blocks info, so files within asset bundles start on aligned boundaries.
+            </summary>
+            <remarks>
+            Introduced in 2020.3.34f1, 2021.3.2f1, 2022.1.1f1 so that Switch patching works appropriately.<br/>
+            <see href="https://unity3d.com/unity/whats-new/2021.3.2"/><br/>
+            <see href="https://issuetracker.unity3d.com/issues/files-within-assetbundles-do-not-start-on-aligned-boundaries-breaking-patching-on-nintendo-switch"/><br/>
+            This fix implies that loading newly generated AssetBundles will require using this new Unity editor/runtime combination. It is not backwards compatible.
+            </remarks>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.EncryptionOld">
+            <summary>
+            Chinese encryption flag prior to 2020.3.34f1, 2021.3.2f1, 2022.1.1f1.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.EncryptionNew">
+            <summary>
+            Chinese encryption flag (presumeably) after 2020.3.34f1, 2021.3.2f1, 2022.1.1f1.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFlagsExtensions.GetCompression(GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags)">
+            <summary>
+            The lowest 6 bits
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFlagsExtensions.GetBlocksAndDirectoryInfoCombined(GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags)">
+            <summary>
+            The 0x40 bit: <see cref="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.BlocksAndDirectoryInfoCombined"/>
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFlagsExtensions.GetBlocksInfoAtTheEnd(GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags)">
+            <summary>
+            The 0x80 bit: <see cref="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.BlocksInfoAtTheEnd"/>
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFlagsExtensions.GetOldWebPluginCompatibility(GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags)">
+            <summary>
+            The 0x100 bit: <see cref="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.OldWebPluginCompatibility"/>
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFlagsExtensions.GetBlockInfoNeedPaddingAtStart(GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags)">
+            <summary>
+            The 0x200 bit: <see cref="F:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileFlags.BlockInfoNeedPaddingAtStart"/>
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader">
+            <summary>
+            The header of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.Signature">
+            <summary>
+            The type of the unity bundle file. Only supporting UnityFS for now.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.Version">
+            <summary>
+            The version of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.UnityWebBundleVersion">
+            <summary>
+            The unity version of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.UnityWebMinimumRevision">
+            <summary>
+            The minimum unity revision of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.FileSize">
+            <summary>
+            The whole size of the bundle file in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.CompressedBlocksInfoSize">
+            <summary>
+            The size of the compressed blocks info in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.UncompressedBlocksInfoSize">
+            <summary>
+            The size of the uncompressed blocks info in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.Flags">
+            <summary>
+            The bundle file flags.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader"/> class.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the bundle file header from the reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Header.BundleFileHeader.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the bundle file header to the writer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo">
+            <summary>
+            Contains the information about the resources of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo.FileInfos">
+            <summary>
+            The file infos of the resources.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo.#ctor">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo"/> object. Used for reading.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo.#ctor(GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo[])">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo"/> object with the file infos. Used for writing.
+            </summary>
+            <param name="_FileInfos">The file infos of the resources.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the data from the reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.BundleFileResourcesInfo.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the data to the writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo">
+            <summary>
+            Contains information about a file node.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Offset">
+            <summary>
+            The file binary offset. The first file in the bundle has an offset of 0.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.UncompressedSize">
+            <summary>
+            The uncompressed size of the file in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Flags">
+            <summary>
+            The flags of the file node. For example if the node is a directory or a file and/or deleted.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Path">
+            <summary>
+            The path or name of the node.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.#ctor">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo"/> to read its values from the reader.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.#ctor(System.Int64,System.Int64,GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag,System.String)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo"/> with the values provided.
+            </summary>
+            <param name="_Offset">The file binary offset.</param>
+            <param name="_UncompressedSize">The uncompressed size of the file in bytes.</param>
+            <param name="_Flags">The flags of the file.</param>
+            <param name="_Path">The path or name of the file.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the file node from the reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the file node to the writer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.GetHashCode">
+            <summary>
+            Returns a hash code for the current object.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader">
+            <summary>
+            The resource reader is used to read the raw decompressed resource data from the storage blocks.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.storageBlockInfos">
+            <summary>
+            The storage block infos to read the resources from.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.resourceInfos">
+            <summary>
+            The resource infos which are stored in the storage blocks.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.#ctor(GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo[],GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo[])">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader"/> with the storage block infos that contain the resources.
+            </summary>
+            <param name="_StorageBlockInfos">The storage block infos to read the resources from.</param>
+            <param name="_ResourceInfos">The resource to read from the storage blocks.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            The resources are stored inside the storage blocks. This method reads the resources from the storage blocks and returns 
+            them as a dictionary with the path to the raw resource data.
+            </summary>
+            <param name="_Reader">The reader to read the storage blocks from.</param>
+            <returns>A map of resource path to the raw resource data.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.Read(System.Collections.Generic.IList{System.Byte[]},GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo)">
+            <summary>
+            Extracts the resource bytes from the storage blocks.
+            </summary>
+            <param name="_StorageBlockData">The storage block data to read the bytes from.</param>
+            <param name="_ResourceInfo">The resource info to read the bytes from the storage blocks.</param>
+            <returns>An array of the resource bytes.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.FindBlock(System.Collections.Generic.IList{System.Byte[]},System.Int64,System.Int32@,System.Int64@)">
+            <summary>
+            Finds the block index and the summed block bytes for a given byte index.
+            </summary>
+            <param name="_StorageBlockData">The storage block data to read the bytes from.</param>
+            <param name="_FindByteIndex">The byte index to find the block index for.</param>
+            <param name="_FoundBlockIndex">The found block index.</param>
+            <param name="_SummedBlockBytes">The summed iterated block bytes.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceReader.Dispose">
+            <summary>
+            Releases the resources.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter">
+            <summary>
+            Writes a list of resources to a writer as storage blocks. With optional compression.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.writer">
+            <summary>
+            The writer to write the storage blocks to.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.compressionType">
+            <summary>
+            The compression the storage blocks are compressed with.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.isDisposed">
+            <summary>
+            Indicates if the object is disposed.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.#ctor(GUPS.Assets.Editor.IO.EndianBinaryWriter,GUPS.Assets.Editor.Compression.CompressionType)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter"/> with the writer and compression type.
+            </summary>
+            <param name="_Writer">The writer to write the resources as storage blocks to.</param>    
+            <param name="_CompressionType">The compression type to compress the storage blocks with.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.Write(System.Collections.Generic.IList{GUPS.Assets.Editor.Numeric.LongArray{System.Byte}})">
+            <summary>
+            Split the resource binaries into storage blocks and write them to the writer.
+            </summary>
+            <param name="_ResourceBinaries">The resource binaries to write to the writer.</param>
+            <returns>A list of storage block infos which contain the resources.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.Write(System.Collections.Generic.IList{System.Byte[]})">
+            <summary>
+            Split the resource binaries into storage blocks and write them to the writer.
+            </summary>
+            <param name="_ResourceBinaries">The resource binaries to write to the writer. Each array is an own resource.</param>
+            <returns>A list of storage block infos which contain the resources.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Resource.ResourceWriter.Dispose">
+            <summary>
+            Release the resources.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag">
+            <summary>
+            A flag to describe the type of the resource.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag.Default">
+            <summary>
+            Default flag.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag.Directory">
+            <summary>
+            Is a directory.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag.Deleted">
+            <summary>
+            Is deleted.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag.SerializedFile">
+            <summary>
+            Is a serialized file.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlagsExtensions">
+            <summary>
+            Extension methods for <see cref="T:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag"/>.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlagsExtensions.IsDeleted(GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag)">
+            <summary>
+            Returns true if the flag is deleted.
+            </summary>
+            <param name="_this">The flag to check.</param>
+            <returns>True if the flag is deleted; otherwise false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlagsExtensions.IsSerializedFile(GUPS.Assets.Editor.Files.Bundle.Node.ResourceInfoFlag)">
+            <summary>
+            Returns true if the flag is a serialized file.
+            </summary>
+            <param name="_this">The flag to check.</param>
+            <returns>The flag is a serialized file; otherwise false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage">
+            <summary>
+            The bundle file storage is used to store the resources of the bundle file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.CompressionType">
+            <summary>
+            The compression type of the storage.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.StorageBlockInfos">
+            <summary>
+            The storage block infos of the storage.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.ResourceInfos">
+            <summary>
+            The resource infos of the storage.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.Resources">
+            <summary>
+            The resources of the storage. Maps the path to the raw resource binary.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.#ctor">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage"/> with no compression. Use if you want to add custom resources.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.#ctor(GUPS.Assets.Editor.Compression.CompressionType)">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage"/> with the compression type. Use if you want to add custom resources.
+            </summary>
+            <param name="_CompressionType">The compression type of the storage.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.#ctor(GUPS.Assets.Editor.Files.Bundle.Block.StorageBlockInfo[],GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo[])">
+            <summary>
+            Instantiates a new <see cref="T:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage"/> with the storage block infos and the resource infos. Use if you want to read resources.
+            </summary>
+            <param name="_StorageBlockInfos">The storage block infos of the storage.</param>
+            <param name="_ResourceInfos">The resource infos of the storage.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Reads the storage from a reader.
+            </summary>
+            <param name="_Reader">The reader to read the storage from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.GetResource(System.String)">
+            <summary>
+            Get the resource binary with the _ResourcePath.
+            </summary>
+            <param name="_ResourcePath">The path of the resource inside the bundle.</param>
+            <returns>The binary of the resource. If the resource was not found returns null.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.ReplaceResource(GUPS.Assets.Editor.Files.Bundle.Resource.ResourceInfo,GUPS.Assets.Editor.Numeric.LongArray{System.Byte})">
+            <summary>
+            Replace the resource with the _ResourcePath with the _ResourceData.
+            </summary>
+            <param name="_ResourceInfo">The resource inside the storage to replace.</param>
+            <param name="_ResourceData">The new resource data.</param>
+            <returns>True if the resource is replaced, otherwise false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Bundle.Storage.BundleFileStorage.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Writes the storage to a writer.
+            </summary>
+            <param name="_Writer">The writer to write the storage to.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if a resource is not found.</exception>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Resources.IResource">
+            <summary>
+            This interface represents a resource addressed by Unity. It is readable and writable.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.AssetsFile">
+            <summary>
+            Represents a serialized .assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFile.AssetsFileHeader">
+            <summary>
+            The header of the assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFile.Version">
+            <summary>
+            The version is inside the header.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFile.AssetsFileMetadata">
+            <summary>
+            The metadata of the assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFile.Objects">
+            <summary>
+            The unity objects inside the assets file.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.#ctor(GUPS.Assets.Editor.Files.UnityFileReader)">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.AssetsFile"/>.
+            </summary>
+            <param name="_Reader">Used to assign the file path and name.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the assets file from a reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.GetObjects``1">
+            <summary>
+            Return a list of objects int the asset file of type TObject.
+            </summary>
+            <typeparam name="TObject">The type of object to return.</typeparam>
+            <returns>A list of objects of type TObject.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the assets file.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.WriteObjects(System.Byte[]@,System.Collections.Generic.List{GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo}@)">
+            <summary>
+            Writes the objects in _ObjectData and returns the object infos.
+            Returns if the writing succeded.
+            </summary>
+            <param name="_ObjectData"></param>
+            <param name="_ObjectInfos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.WriteMetadata(System.Byte[]@)">
+            <summary>
+            Write the metadata to a stream and return it over _Metadata.
+            </summary>
+            <param name="_Metadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.WriteHeader(System.Byte[]@)">
+            <summary>
+            Write the header to a stream and return it over _HeaderData.
+            </summary>
+            <param name="_HeaderData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.GetHashCode">
+            <summary>
+            Get the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFile.Equals(System.Object)">
+            <summary>
+            Compare if the other object is equal.
+            </summary>
+            <param name="_Other">The other object to compare to.</param>
+            <returns>True if the objects are equal; otherwise false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion">
+            <summary>
+            Version of a unity file.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v5_0_1_AndUp">
+            <summary>
+            Added support for stripped objects.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v5_5_0a_AndUp">
+            <summary>
+            Refactoring of class id.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v5_5_0b_AndUp">
+            <summary>
+            Refactoring type data.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v2019_1a_AndUp">
+            <summary>
+            Refactoring of shareable type tree data.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v2019_1_AndUp">
+            <summary>
+            Added flags for type trees nodes.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v2019_2_AndUp">
+            <summary>
+            Refactoring of serialized types.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v2019_3_AndUp">
+            <summary>
+            Added storing of type dependencies.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion.v2020_1_AndUp">
+            <summary>
+            Added support for large files.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier">
+            <summary>
+            Represents an identifier for an extern file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.Version">
+            <summary>
+            The serialized version of the type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.BufferedPath">
+            <summary>
+            The buffered path, mostly empty.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.Guid">
+            <summary>
+            The file guid.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.AssetType">
+            <summary>
+            The asset type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.PathName">
+            <summary>
+            The file path.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFile)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier"/> object used for reading.
+            </summary>
+            <param name="_AssetsFile">Required to get the version.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion,System.String,System.Guid,System.Int32,System.String)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier"/> object using custom values.
+            </summary>
+            <param name="_Version"></param>
+            <param name="_BufferedPath"></param>
+            <param name="_Guid"></param>
+            <param name="_AssetType"></param>
+            <param name="_PathName"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the file identifier from the reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the file identifier to the writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.GetHashCode">
+            <summary>
+            Get the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Externals.FileIdentifier.Equals(System.Object)">
+            <summary>
+            Check if the object is equal to another object.
+            </summary>
+            <param name="_Other">The other object to compare to.</param>
+            <returns>True if the objects are equal; otherwise false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader">
+            <summary>
+            Header of the assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.MetadataSize">
+            <summary>
+            Size of the metadata in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.FileSize">
+            <summary>
+            Whole file size in bytes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.Version">
+            <summary>
+            The assets file version.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.DataOffset">
+            <summary>
+            Byte offset for the objects.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.EndianType">
+            <summary>
+            The endian of the byte data.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.Reserved">
+            <summary>
+            Unkown.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.UnknownBlob">
+            <summary>
+            Unkown.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.FromBundle">
+            <summary>
+            Is from a bundle.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.#ctor">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader"/>.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the assets file header from the _Reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the assets file header to the _Writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileHeader.ToString">
+            <summary>
+            To string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata">
+            <summary>
+            Metadata of the assets file.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.assetsFile">
+            <summary>
+            The assets file that this metadata belongs to.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Version">
+            <summary>
+            Version to read and write the metadata.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.UnityVersion">
+            <summary>
+            The unity version of the assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.TargetPlatform">
+            <summary>
+            The unity target platform of the assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.EnableTypeTree">
+            <summary>
+            If type tree is enabled, serialized types map their whole field/properties and dependencies, to allow comptibility between unity versions.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.SerializedTypes">
+            <summary>
+            Serialized types.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.ObjectInfos">
+            <summary>
+            Info about the serialized objects.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Preloads">
+            <summary>
+            List of objects need to be preloaded.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Externals">
+            <summary>
+            List over the external file references.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.RefactoredSerializedTypes">
+            <summary>
+            Refeactored serialized types.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.UserInformation">
+            <summary>
+            User informations that are always empty.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFile)">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata"/> belonging to the given assets file.
+            </summary>
+            <param name="_AssetsFile">The assets file.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the assets file metadata from the _Reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the assets file metadata to the _Writer. 
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.GetHashCode">
+            <summary>
+            Get the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata.Equals(System.Object)">
+            <summary>
+            Compare the object to another object.
+            </summary>
+            <param name="_Other">The other object to compare to.</param>
+            <returns>True if the objects are equal; otherwise false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject">
+            <summary>
+            A not categorized object. Just reads the data blob.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.PathId">
+            <summary>
+            All objects have a path id (is not unique!).
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.TypeGuid">
+            <summary>
+            The guid of the type this object belongs too.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.DataBlob">
+            <summary>
+            All data of the object.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.#ctor(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader)">
+            <summary>
+            Read the object data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write the object data.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.DefaultObject.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension">
+            <summary>
+            Represents an unity editor extension.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension.PrefabParentObject">
+            <summary>
+            The origin prefab object.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension.PrefabInternal">
+            <summary>
+            A internal unity prefab.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension.#ctor(System.Int64,System.Guid)">
+            <summary>
+            Create an editor extension by parameter.
+            </summary>
+            <param name="_PathId"></param>
+            <param name="_TypeGuid"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension.#ctor(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader)">
+            <summary>
+            Read the object data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.EditorExtension.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write the object data.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.IObject">
+            <summary>
+            Iterface over a unity object.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.IObject.PathId">
+            <summary>
+            All objects have a unique path id in its file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.IObject.TypeGuid">
+            <summary>
+            The guid of the type this object belongs too.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.IObject.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write the object to a stream.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript">
+            <summary>
+            Represents a unity mono script.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.ExecutionOrder">
+            <summary>
+            The order of execution while runtime.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.PropertyGuid">
+            <summary>
+            The guid.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.ClassName">
+            <summary>
+            The class name.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.Namespace">
+            <summary>
+            The namespace.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.AssemblyName">
+            <summary>
+            The assembly name.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.#ctor(System.Int64,System.Guid,System.String,System.Int32,System.Guid,System.String,System.String,System.String)">
+            <summary>
+            Create a monoscript by parameter.
+            </summary>
+            <param name="_PathId"></param>
+            <param name="_TypeGuid"></param>
+            <param name="_Name"></param>
+            <param name="_ExecutionOrder"></param>
+            <param name="_PropertyGuid"></param>
+            <param name="_ClassName"></param>
+            <param name="_Namespace"></param>
+            <param name="_AssemblyName"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.#ctor(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader)">
+            <summary>
+            Read the objects data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.UpdateType(System.String,System.String,System.String)">
+            <summary>
+            Update the mono scripts type.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write the object data.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.MonoScript.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject">
+            <summary>
+            Represents a unity named object.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.Name">
+            <summary>
+            The objects name.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.#ctor(System.Int64,System.Guid,System.String)">
+            <summary>
+            Create a named object by parameter.
+            </summary>
+            <param name="_PathId"></param>
+            <param name="_TypeGuid"></param>
+            <param name="_Name"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.#ctor(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader)">
+            <summary>
+            Read the objects data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write the object data.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.NamedObject.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object">
+            <summary>
+            Reprensents the unity object.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.PathId">
+            <summary>
+            All objects have a unique path id in its file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.TypeGuid">
+            <summary>
+            The guid of the type this object belongs too.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.ObjectHideFlags">
+            <summary>
+            Flag over visibilty by camera.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.#ctor(System.Int64,System.Guid)">
+            <summary>
+            Create an object by parameter.
+            </summary>
+            <param name="_PathId"></param>
+            <param name="_TypeGuid"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.#ctor(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader)">
+            <summary>
+            Read the object data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.Write(GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter)">
+            <summary>
+            Write an object to _Writer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.Object.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1">
+            <summary>
+            Pointer to another unity object.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1.FileId">
+            <summary>
+            The file id.
+            0: The current read assets file.
+            1...n: External file id.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1.PathId">
+            <summary>
+            The path id. Each object has a unique (in the file) path id.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1.IsNull">
+            <summary>
+            Is a reference or not.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1.#ctor(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the object pointer data from _Reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.Classes.PPtr`1.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the object pointer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo">
+            <summary>
+            Information about an serialized object.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.Version">
+            <summary>
+            The serialized version of the type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.PathId">
+            <summary>
+            All objects have a unique path id in its file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.ByteOffset">
+            <summary>
+            The byte offsets for the objects data. Does not include the metadata data offset!
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.ByteCount">
+            <summary>
+            The amount of bytes this objects consists of.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.SerializedType">
+            <summary>
+            The serialized type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.ClassId">
+            <summary>
+            The unity class id of the serialized type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.TypeGuid">
+            <summary>
+            The unique guid of the serialized type. Because there can be multiple custom serialized types sharing the same class ids (for example being of class MonoBehaviour).
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion,System.Int64,System.Int64,System.UInt32,GUPS.Assets.Editor.Files.Serialized.Types.SerializedType)">
+            <summary>
+            Create a object info directly by data.
+            </summary>
+            <param name="_Version"></param>
+            <param name="_PathId"></param>
+            <param name="_ByteOffset"></param>
+            <param name="_ByteCount"></param>
+            <param name="_SerializedType"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata,GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Create a object info, by passing the owning _AssetsFile, _AssetsFileMetadata, _Reader, to read data from.
+            </summary>
+            <param name="_AssetsFile"></param>
+            <param name="_AssetsFileMetadata"></param>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.Write(GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata,GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write a object info belongign to _AssetsFileMetadata.
+            </summary>
+            <param name="_AssetsFile"></param>
+            <param name="_AssetsFileMetadata"></param>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo.ToString">
+            <summary>
+            To string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader">
+            <summary>
+            Reader of objects.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader.AssetsFile">
+            <summary>
+            The belonging assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader.ObjectInfo">
+            <summary>
+            The belonging object info.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader.BuildTarget">
+            <summary>
+            The build target, read form the metafiles.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader.#ctor(GUPS.Assets.Editor.IO.EndianBinaryReader,GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo)">
+            <summary>
+            The object reader needs a endian reader, the assets file and the object info.
+            </summary>
+            <param name="_Reader"></param>
+            <param name="_AssetsFile"></param>
+            <param name="_ObjectInfo"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectReader.#ctor(System.IO.Stream,GUPS.Assets.Editor.IO.EndianType,GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.Objects.ObjectInfo)">
+            <summary>
+            The object reader needs a stream, endian, the assets file and the object info.
+            </summary>
+            <param name="_Stream"></param>
+            <param name="_EndianType"></param>
+            <param name="_AssetsFile"></param>
+            <param name="_ObjectInfo"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter">
+            <summary>
+            Writer of an object. 
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter.AssetsFile">
+            <summary>
+            The belonging assets file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter.BuildTarget">
+            <summary>
+            The build target, read form the metafiles.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter.#ctor(GUPS.Assets.Editor.IO.EndianBinaryWriter,GUPS.Assets.Editor.Files.Serialized.AssetsFile)">
+            <summary>
+            The object writer needs an endian writer and the assets file.
+            </summary>
+            <param name="_Writer"></param>
+            <param name="_AssetsFile"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Objects.ObjectWriter.#ctor(System.IO.Stream,GUPS.Assets.Editor.IO.EndianType,GUPS.Assets.Editor.Files.Serialized.AssetsFile)">
+            <summary>
+            The object writer needs a stream, endian and the assets file.
+            </summary>
+            <param name="_Stream"></param>
+            <param name="_EndianType"></param>
+            <param name="_AssetsFile"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Objects.YamlClassIdType">
+            <summary>
+            Unity class id types.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier">
+            <summary>
+            Maps to a object to be preloaded.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.Version">
+            <summary>
+            The serialized version of the type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.FileId">
+            <summary>
+            The file id.
+            0: The current read assets file.
+            1...n: External file id.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.PathId">
+            <summary>
+            The path id. Each object has a unique (in the file) path id.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFileFormatVersion,System.Int32,System.Int64)">
+            <summary>
+            Create a script identifier by parameters.
+            </summary>
+            <param name="_Version"></param>
+            <param name="_FileId"></param>
+            <param name="_PathId"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.#ctor(GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata,GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Create a script identifier, by passing the owning _AssetsFile, _AssetsFileMetadata, _Reader, to read data from.
+            </summary>
+            <param name="_AssetsFile"></param>
+            <param name="_AssetsFileMetadata"></param>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.Write(GUPS.Assets.Editor.Files.Serialized.AssetsFile,GUPS.Assets.Editor.Files.Serialized.AssetsFileMetadata,GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write a script identifier.
+            </summary>
+            <param name="_AssetsFile"></param>
+            <param name="_AssetsFileMetadata"></param>
+            <param name="_Writer"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Preloads.PreloadIdentifier.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.CommonNames">
+            <summary>
+            Common names used in Unity's serialized files.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.CommonNames.StringBuffer">
+            <summary>
+            Mapping of string buffer index to string.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType">
+            <summary>
+            Represents a serialized type with its dependencies.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.TypeDependencies">
+            <summary>
+            The type dependencies.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.#ctor(System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Int16,System.Guid,System.Guid)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType"/> by parameters
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+            <param name="_ClassId"></param>
+            <param name="_IsStrippedType"></param>
+            <param name="_ScriptTypeIndex"></param>
+            <param name="_ScriptGuid"></param>
+            <param name="_TypeGuid"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType"/> for reading.
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.ReadTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Read the type dependencies.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.WriteTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Write the type dependencies.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.GetHashCode">
+            <summary>
+            Get the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedType.Equals(System.Object)">
+            <summary>
+            Compare the object to another object.
+            </summary>
+            <param name="_Other">The other object to compare to.</param>
+            <returns>True if the objects are equal; otherwise false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase">
+            <summary>
+            Represents a type of the unity objects.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.IsRefactoredType">
+            <summary>
+            The type is the newer refactored version.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.HasEnabledTypeTree">
+            <summary>
+            The type tree is enabled.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.ClassId">
+            <summary>
+            Unity class id - Can be anything from GameObject, GameObject, MonoBehaviour, MonoScript, ...
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.IsStrippedType">
+            <summary>
+            Is stripped outside (older unity version I think).
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.ScriptTypeIndex">
+            <summary>
+            Index to a script type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.ScriptGuid">
+            <summary>
+            A Hash128 Guid. Representing the newer used script guid instead of type guid.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.TypeGuid">
+            <summary>
+            A Hash128 Guid. Representing the type guid.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.TypeTree">
+            <summary>
+            Stores the properties of this type. Stores the properties names, types, etc.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.#ctor(System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Int16,System.Guid,System.Guid)">
+            <summary>
+            Instantiates a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase"/> with custom values.
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+            <param name="_ClassId"></param>
+            <param name="_IsStrippedType"></param>
+            <param name="_ScriptTypeIndex"></param>
+            <param name="_ScriptGuid"></param>
+            <param name="_TypeGuid"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Instantiates a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase"/> used for reading.
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.Read(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Read the type from the reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.ReadTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Read the dependencies of the type.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.Write(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Write the type to the writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.WriteTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Write the dependencies of the type.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.GetHashCode">
+            <summary>
+            Hashcode.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeBase.Equals(System.Object)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="_Other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference">
+            <summary>
+            A reference type for a serializeable C# type.
+            </summary>
+            <remarks>
+            These are used for fields with the [SerializeReference] attribute.
+            </remarks>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.ClassName">
+            <summary>
+            The name of the class.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.Namespace">
+            <summary>
+            The namespace of the class.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.AsmName">
+            <summary>
+            The assembly name of the class.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.FullName">
+            <summary>
+            The full name of the class.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.#ctor(System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Int16,System.Guid,System.Guid)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference"/> by parameters.
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+            <param name="_ClassId"></param>
+            <param name="_IsStrippedType"></param>
+            <param name="_ScriptTypeIndex"></param>
+            <param name="_ScriptGuid"></param>
+            <param name="_TypeGuid"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Instantiate a <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference"/> for reading.
+            </summary>
+            <param name="_IsRefactoredType"></param>
+            <param name="_HasEnabledTypeTree"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.ReadTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Read the type reference.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.WriteTypeDependencies(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Write the type reference.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.GetHashCode">
+            <summary>
+            Get the hash code.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.SerializedTypeReference.Equals(System.Object)">
+            <summary>
+            Compare the object to another object.
+            </summary>
+            <param name="_Other">The other object to compare to.</param>
+            <returns>True if the objects are equal; otherwise false.</returns>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.HideInEditor">
+            <summary>
+            Putting this mask in a transfer will make the variable be hidden in the property editor.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.NotEditable">
+            <summary>
+            Makes a variable not editable in the property editor.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.StrongPPtr">
+            <summary>
+            There are 3 types of PPtrs: <see cref="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.StrongPPtr"/>, default (weak pointer)
+            a Strong PPtr forces the referenced object to be cloned.
+            A Weak PPtr doesnt clone the referenced object, but if the referenced object is being cloned anyway (eg. If another (strong) pptr references this object)
+            this PPtr will be remapped to the cloned object.
+            If an object referenced by a WeakPPtr is not cloned, it will stay the same when duplicating and cloning, but be NULLed when templating.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.TreatIntegerValueAsBoolean">
+            <summary>
+            Makes an integer variable appear as a checkbox in the editor.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.SimpleEditor">
+            <summary>
+            Show in simplified editor
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.DebugProperty">
+            <summary>
+            For when the options of a serializer tell you to serialize debug properties (<see cref="!:TransferInstructionFlags.SerializeDebugProperties"/>).
+            All debug properties have to be marked <see cref="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.DebugProperty"/>.
+            Debug properties are shown in expert mode in the inspector but are not serialized normally.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.IgnoreInMetaFiles">
+            <summary>
+            Ignore this property when reading or writing .meta files
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.TransferAsArrayEntryNameInMetaFiles">
+            <summary>
+            When reading meta files and this property is not present, read array entry name instead (for backwards compatibility).
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.TransferUsingFlowMappingStyle">
+            <summary>
+            When writing YAML Files, uses the flow mapping style (all properties in one line, with "{}").
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags.GenerateBitwiseDifferences">
+            <summary>
+            Tells SerializedProperty to generate bitwise difference information for this field.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree">
+            <summary>
+            Represents a type tree in a serialized file with nodes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.Nodes">
+            <summary>
+            The type nodes.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.StringBuffer">
+            <summary>
+            Contains the custom type names.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.Read(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Reads the type tree from a reader.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+            <exception cref="T:System.IO.InvalidDataException"></exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.Write(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Writes the type tree to a writer.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.ToString">
+            <summary>
+            Get the string representation of the type tree.
+            </summary>
+            <returns>The string representation of the type tree.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode">
+            <summary>
+            Represents a node in the type tree of a serialized file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Version">
+            <summary>
+            Field type version, starts with 1 and is incremented after the type information has been significantly updated in a new release.
+            Equal to serializedVersion in Yaml format files
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Level">
+            <summary>
+            Depth of current type relative to root
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.TypeFlags">
+            <summary>
+            Array flag, set to 1 if type is "Array" or "TypelessData".
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.TypeStrOffset">
+            <summary>
+            Type offset in <see cref="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.StringBuffer"/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.NameStrOffset">
+            <summary>
+            Name offset in <see cref="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTree.StringBuffer"/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Type">
+            <summary>
+            Name of the data type. This can be the name of any substructure or a static predefined type.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Name">
+            <summary>
+            Name of the field.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.ByteSize">
+            <summary>
+            Size of the data value in bytes, e.g. 4 for int. -1 means that there is an array somewhere inside its hierarchy<br/>
+            Note: The padding for the alignment is not included in the size.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Index">
+            <summary>
+            Index of the field that is unique within a tree.<br/>
+            Normally starts with 0 and is incremented with each additional field.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.MetaFlag">
+            <summary>
+            Metaflags of the field
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.RefTypeHash">
+            <summary>
+            The hash of the type of the field.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.#ctor">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode"/> for reading.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.#ctor(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode"/> by parameters.
+            </summary>
+            <param name="_Type"></param>
+            <param name="_Name"></param>
+            <param name="_Level"></param>
+            <param name="_Align"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.#ctor(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,GUPS.Assets.Editor.Files.Serialized.Types.TransferMetaFlags)">
+            <summary>
+            Instantiate a new <see cref="T:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode"/> by parameters.
+            </summary>
+            <param name="_Type"></param>
+            <param name="_Name"></param>
+            <param name="_Level"></param>
+            <param name="_ByteSize"></param>
+            <param name="_Index"></param>
+            <param name="_Version"></param>
+            <param name="_TypeFlags"></param>
+            <param name="_MetaFlag"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Read(GUPS.Assets.Editor.Files.Serialized.SerializedReader)">
+            <summary>
+            Read the type tree node.
+            </summary>
+            <param name="_Reader">The reader to read from.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.Write(GUPS.Assets.Editor.Files.Serialized.SerializedWriter)">
+            <summary>
+            Write the type tree node.
+            </summary>
+            <param name="_Writer">The writer to write to.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.Serialized.Types.TypeTreeNode.ToString">
+            <summary>
+            Get the string representation of the type tree node.
+            </summary>
+            <returns>The string representation of the type tree node.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.UnityFile">
+            <summary>
+            Represents a version able unity file.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFile.FullFilePath">
+            <summary>
+            The full file path.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFile.FileName">
+            <summary>
+            The file name.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFile.#ctor">
+            <summary>
+            Instatiate a unity file.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFile.#ctor(System.String,System.String)">
+            <summary>
+            Instatiate a unity file.
+            </summary>
+            <param name="_FilePath"></param>
+            <param name="_FileName"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFile.Read(GUPS.Assets.Editor.IO.EndianBinaryReader)">
+            <summary>
+            Read the unity file from a reader.
+            </summary>
+            <param name="_Reader"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFile.Write(GUPS.Assets.Editor.IO.EndianBinaryWriter)">
+            <summary>
+            Write the unity file to a writer.
+            </summary>
+            <param name="_Writer"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.UnityFileReader">
+            <summary>
+            A endian binary reader for unity files.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFileReader.FullFilePath">
+            <summary>
+            Get the full file path.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFileReader.FileName">
+            <summary>
+            Get the file name.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFileReader.FileType">
+            <summary>
+            Get the file type.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.#ctor(System.String)">
+            <summary>
+            Create a reader by the _FilePath.
+            </summary>
+            <param name="_FilePath">The file path to read.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.#ctor(System.String,System.IO.Stream,System.Boolean)">
+            <summary>
+            Create a reader for _FilePath by _Stream.
+            </summary>
+            <param name="_FilePath">The file path.</param>
+            <param name="_Stream">The stream to read.</param>
+            <param name="_LeaveStreamOpen">Leave the stream open after the reader is disposed.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.CheckFileType">
+            <summary>
+            Find the file type and reset stream position.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.IsZipFile">
+            <summary>
+            Check if the file is a zip file.
+            </summary>
+            <returns>True if the file is a zip file; otherwise, false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.IsGZipFile">
+            <summary>
+            Check if the file is a gzip file.
+            </summary>
+            <returns>The file is a gzip file; otherwise, false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.IsBrotliFile">
+            <summary>
+            Check if the file is a brotli file.
+            </summary>
+            <returns>The file is a brotli file; otherwise, false.</returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileReader.IsAssetsFile">
+            <summary>
+            Find if the file is a assets unity file.
+            </summary>
+            <returns>The file is a assets unity file; otherwise, false.</returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.UnityFileType">
+            <summary>
+            The file type of a unity file.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.UnityFileType.AssetsFile">
+            <summary>
+            The file is a serialized assets file.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Files.UnityFileType.BundleFile">
+            <summary>
+            The file is a bundle file.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Files.UnityFileWriter">
+            <summary>
+            A endian binary writer for unity files.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFileWriter.FullFilePath">
+            <summary>
+            Get the full file path.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Files.UnityFileWriter.FileName">
+            <summary>
+            Get the file name.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileWriter.#ctor(System.String)">
+            <summary>
+            Create a reader by the _FilePath.
+            </summary>
+            <param name="_FilePath"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Files.UnityFileWriter.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            Create a reader for _FilePath by _Stream.
+            </summary>
+            <param name="_FilePath"></param>
+            <param name="_Stream"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.IO.EndianBinaryReader">
+            <summary>
+            Extends the BinaryReader to read either BigEndian or LittleEndian.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryReader.Endian">
+            <summary>
+            The EndianType to read.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianBinaryReader.buffer2">
+            <summary>
+            Simple read 2 byte buffer.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianBinaryReader.buffer4">
+            <summary>
+            Simple read 4 byte buffer.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianBinaryReader.buffer8">
+            <summary>
+            Simple read 8 byte buffer.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryReader.Position">
+            <summary>
+            The BaseStream Position.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryReader.BitConverterEndian">
+            <summary>
+            The EndianType of the BitConverter.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.#ctor(System.IO.Stream,GUPS.Assets.Editor.IO.EndianType,System.Boolean)">
+            <summary>
+            The endian binary reader needs a stream to read from and the endian.
+            </summary>
+            <param name="_Stream">The stream to read from.</param>
+            <param name="_Endian">The endian to read.</param>
+            <param name="_LeaveStreamOpen">Leave the stream open after reading.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.AlignStream">
+            <summary>
+            Unity uses 4 byte blocks. Align the stream if uneven to it.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.AlignStream(System.Int32)">
+            <summary>
+            Align the stream to _Alignment if uneven to it.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadInt16">
+            <summary>
+            Read a Int16 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadUInt16">
+            <summary>
+            Read a UInt16 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadInt32">
+            <summary>
+            Read a Int32 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadUInt32">
+            <summary>
+            Read a UInt32 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadInt64">
+            <summary>
+            Read a Int64 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadUInt64">
+            <summary>
+            Read a UInt64 depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadSingle">
+            <summary>
+            Read a Float depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadDouble">
+            <summary>
+            Read a Double depend on Endian.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadAlignedString">
+            <summary>
+            Read an aligned string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryReader.ReadStringToNull(System.Int32)">
+            <summary>
+            Read a string until read null byte.
+            </summary>
+            <param name="_MaxLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GUPS.Assets.Editor.IO.EndianBinaryWriter">
+            <summary>
+            Extends the BinaryWriter to write either BigEndian or LittleEndian.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryWriter.Endian">
+            <summary>
+            The EndianType to read.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianBinaryWriter.buffer4096">
+            <summary>
+            Simple write 4096 byte buffer.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryWriter.Position">
+            <summary>
+            The BaseStream Position.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.IO.EndianBinaryWriter.BitConverterEndian">
+            <summary>
+            The EndianType of the BitConverter.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.#ctor(System.IO.Stream,GUPS.Assets.Editor.IO.EndianType,System.Boolean)">
+            <summary>
+            The endian binary writer needs a stream to write to and the endian.
+            </summary>
+            <param name="_Stream">The stream to read from.</param>
+            <param name="_Endian">The endian to read.</param>
+            <param name="_LeaveStreamOpen">Leave the stream open after reading.</param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.AlignStream">
+            <summary>
+            Unity uses 4 byte blocks. Align the stream if uneven to it.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.AlignStream(System.Int32)">
+            <summary>
+            Align the stream to _Alignment if uneven to it.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.Int16)">
+            <summary>
+            Write a Int16 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.UInt16)">
+            <summary>
+            Write a UInt16 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.Int32)">
+            <summary>
+            Write a Int32 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.UInt32)">
+            <summary>
+            Write a UInt32 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.Int64)">
+            <summary>
+            Write a Int64 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.UInt64)">
+            <summary>
+            Write a UInt64 depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.Single)">
+            <summary>
+            Write a float depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.Write(System.Double)">
+            <summary>
+            Write a double depend on Endian.
+            </summary>
+            <param name="_Value"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.WriteAlignedString(System.String)">
+            <summary>
+            Write an aligned string and write the length.
+            </summary>
+            <param name="_String"></param>
+        </member>
+        <member name="M:GUPS.Assets.Editor.IO.EndianBinaryWriter.WriteStringToNull(System.String)">
+            <summary>
+            Write a string without writing the length. And add a NULL at the end.
+            </summary>
+            <param name="_String"></param>
+        </member>
+        <member name="T:GUPS.Assets.Editor.IO.EndianType">
+            <summary>
+            Enumeration over the endian type.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianType.LittleEndian">
+            <summary>
+            Little endian.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.IO.EndianType.BigEndian">
+            <summary>
+            Big endian.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Numeric.LongArray`1">
+            <summary>
+            Represents a dynamically managed array that can hold more than the maximum number of elements allowed in a regular .NET array.
+            </summary>
+            <remarks>
+            This class internally divides the array into chunks to circumvent the size limitation of standard arrays (2,147,483,591 elements).
+            </remarks>
+            <typeparam name="T">The type of elements stored in the array.</typeparam>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongArray`1.CHUNK_SIZE">
+            <summary>
+            Maximum size of a single array chunk (2,147,483,591 not (int.MaxValue) 2,147,483,647 elements).
+            </summary>
+            <remarks>
+            This constant is used to partition the array into multiple chunks as standard .NET arrays cannot exceed this size.
+            </remarks>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongArray`1.chunks">
+            <summary>
+            Jagged array that holds the data in multiple chunks.
+            </summary>
+            <remarks>
+            Each chunk is an array with a maximum size of <see cref="F:GUPS.Assets.Editor.Numeric.LongArray`1.CHUNK_SIZE"/>. The last chunk may be smaller depending on the total length.
+            </remarks>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongArray`1.Chunks">
+            <summary>
+            Jagged array that holds the data in multiple chunks.
+            </summary>
+            <remarks>
+            Each chunk is an array with a maximum size of <see cref="F:GUPS.Assets.Editor.Numeric.LongArray`1.CHUNK_SIZE"/>. The last chunk may be smaller depending on the total length.
+            </remarks>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongArray`1.length">
+            <summary>
+            The total length of the array.
+            </summary>
+            <remarks>
+            This represents the total number of elements that the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> can hold.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> class with the specified length.
+            </summary>
+            <param name="_Length">The total length of the array.</param>
+            <remarks>
+            The array is divided into chunks, with each chunk having a size of <see cref="F:GUPS.Assets.Editor.Numeric.LongArray`1.CHUNK_SIZE"/> except possibly the last one.
+            If the length is negative, an <see cref="T:System.ArgumentOutOfRangeException"/> is thrown.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the length is negative.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.#ctor(`0[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> class from an existing array.
+            </summary>
+            <param name="_Array">The source array to initialize from.</param>
+            <remarks>
+            Creates a new LongArray and copies all elements from the source array.
+            The resulting LongArray will have the same length as the source array.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when the source array is null.</exception>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongArray`1.Item(System.Int64)">
+            <summary>
+            Gets or sets the value at the specified index.
+            </summary>
+            <param name="_Index">The index of the element to access.</param>
+            <returns>The element at the specified index.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the index is out of bounds.</exception>
+            <remarks>
+            This indexer provides access to the entire array, abstracting the chunking mechanism from the user.
+            The index is validated to ensure it is within bounds.
+            </remarks>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongArray`1.Length">
+            <summary>
+            Gets the total length of the array.
+            </summary>
+            <remarks>
+            This property returns the total number of elements that the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> can store.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.ToArray">
+            <summary>
+            Converts the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> to a regular array.
+            </summary>
+            <returns>A new array containing all elements of the <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/>.</returns>
+            <exception cref="T:System.OutOfMemoryException">
+            Thrown when the LongArray's length exceeds the maximum size of a regular array
+            or when there isn't enough memory to create the new array.
+            </exception>
+            <remarks>
+            <para>
+            This method creates a new array and copies all elements from the LongArray into it.
+            The resulting array will have the same length as the LongArray.
+            </para>
+            <para>
+            Note that this method can only create arrays up to CHUNK_SIZE in length.
+            If the LongArray is larger, an OutOfMemoryException will be thrown.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Copy(GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,System.Array,System.Int32,System.Int32)">
+            <summary>
+            Copies the elements from one <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> to a target array.
+            </summary>
+            <param name="_Source">The source <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> from which to copy the elements.</param>
+            <param name="_SourceIndex">The index in the source array to start the copy operation.</param>
+            <param name="_Destination">The destination array to copy the elements to. This can be a regular array or another <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/>.</param>
+            <param name="_DestinationIndex">The index in the destination array to start placing the copied elements.</param>
+            <param name="_Count">The number of elements to copy.</param>
+            <remarks>
+            The destination can be a regular array. The method ensures that no out-of-bounds access occurs.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the target array is not large enough to hold the copied data.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the source or destination index is out of range.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Copy(System.Array,System.Int32,GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,System.Int32)">
+            <summary>
+            Copies elements from a regular array to a <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/>.
+            </summary>
+            <param name="_Source">The source array from which to copy the elements.</param>
+            <param name="_SourceIndex">The index in the source array to start the copy operation.</param>
+            <param name="_Destination">The destination <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> to copy the elements to.</param>
+            <param name="_DestinationIndex">The index in the destination array to start placing the copied elements.</param>
+            <param name="_Count">The number of elements to copy.</param>
+            <remarks>
+            This method handles copying from a regular array to a LongArray, managing the chunking internally.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the source array is not of the correct type or when parameters are invalid.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the source or destination index is out of range.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Copy(GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,System.Int64)">
+            <summary>
+            Copies elements from one <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> to another <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/>.
+            </summary>
+            <param name="_Source">The source LongArray from which to copy the elements.</param>
+            <param name="_SourceIndex">The index in the source array to start the copy operation.</param>
+            <param name="_Destination">The destination LongArray to copy the elements to.</param>
+            <param name="_DestinationIndex">The index in the destination array to start placing the copied elements.</param>
+            <param name="_Count">The number of elements to copy.</param>
+            <remarks>
+            This method handles copying between LongArrays efficiently, managing the chunking internally.
+            For large copies, it attempts to optimize chunk-aligned copies.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when either source or destination is null.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the source or destination index is out of range.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Copy(GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,System.Int64,System.Boolean,System.Int64)">
+            <summary>
+            Copies elements from one <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> to another <see cref="T:GUPS.Assets.Editor.Numeric.LongArray`1"/> with parallel processing support.
+            </summary>
+            <param name="_Source">The source LongArray from which to copy the elements.</param>
+            <param name="_SourceIndex">The index in the source array to start the copy operation.</param>
+            <param name="_Destination">The destination LongArray to copy the elements to.</param>
+            <param name="_DestinationIndex">The index in the destination array to start placing the copied elements.</param>
+            <param name="_Count">The number of elements to copy.</param>
+            <param name="_UseParallel">Whether to use parallel processing for the copy operation.</param>
+            <param name="_ParallelThreshold">The minimum number of elements required to trigger parallel processing.</param>
+            <remarks>
+            This method provides an optimized copy operation for large arrays using parallel processing when appropriate.
+            The parallel processing is only used if _UseParallel is true and the count exceeds the threshold.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Resize(GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64)">
+            <summary>
+            Creates a new LongArray with the specified size and copies elements from the source array.
+            </summary>
+            <param name="_Source">The source LongArray to copy elements from.</param>
+            <param name="_NewSize">The size of the new array.</param>
+            <returns>A new LongArray with the specified size containing copied elements from the source array.</returns>
+            <remarks>
+            If the new size is larger than the source array, the additional elements will be initialized to their default values.
+            If the new size is smaller, only elements that fit within the new size will be copied.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when source array is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when new size is negative.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongArray`1.Resize(GUPS.Assets.Editor.Numeric.LongArray{`0},System.Int64,System.Boolean,System.Int64)">
+            <summary>
+            Creates a new LongArray with the specified size and copies elements from the source array,
+            optionally allowing parallel processing for large arrays.
+            </summary>
+            <param name="_Source">The source LongArray to copy elements from.</param>
+            <param name="_NewSize">The size of the new array.</param>
+            <param name="_UseParallel">Whether to use parallel processing for copying elements.</param>
+            <param name="_ParallelThreshold">The minimum number of elements required to trigger parallel processing.</param>
+            <returns>A new LongArray with the specified size containing copied elements from the source array.</returns>
+            <remarks>
+            This overload provides the option to use parallel processing for large arrays to improve performance.
+            Parallel processing will only be used if _UseParallel is true and the number of elements to copy
+            exceeds the specified threshold.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when source array is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when new size is negative or parallel threshold is negative.</exception>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Numeric.LongMemoryStream">
+            <summary>
+            Represents a stream that uses a LongArray{byte} as its backing store, allowing for streams larger than 2GB.
+            </summary>
+            <remarks>
+            This class provides stream functionality using a LongArray{byte} as the underlying storage mechanism,
+            which enables handling of data sizes beyond the standard .NET array size limitations.
+            The stream can be created with various initial configurations and supports both reading and writing operations.
+            </remarks>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.buffer">
+            <summary>
+            The underlying buffer that stores the stream's data.
+            </summary>
+            <remarks>
+            This buffer uses LongArray{byte} to store data, allowing for sizes larger than 2GB.
+            </remarks>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.position">
+            <summary>
+            The current position within the stream.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.length">
+            <summary>
+            The length of the stream.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.writable">
+            <summary>
+            Indicates whether the stream supports writing operations.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.DEFAULT_INITIAL_CAPACITY">
+            <summary>
+            The initial capacity used when automatically resizing the stream.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.GROWTH_FACTOR">
+            <summary>
+            The factor by which the capacity increases when automatically resizing.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.capacity">
+            <summary>
+            The current capacity of the stream's buffer.
+            </summary>
+        </member>
+        <member name="F:GUPS.Assets.Editor.Numeric.LongMemoryStream.isDisposed">
+            <summary>
+            Indicates whether the object has been disposed.
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongMemoryStream"/> class with zero initial capacity.
+            </summary>
+            <remarks>
+            Creates a writable stream with zero initial capacity. The stream can hold data up to the specified size.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when capacity is negative.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongMemoryStream"/> class with the specified capacity.
+            </summary>
+            <param name="_Capacity">The initial capacity of the stream in bytes.</param>
+            <remarks>
+            Creates a writable stream with the specified capacity. The stream can hold data up to the specified size.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when capacity is negative.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.#ctor(System.Byte[],System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongMemoryStream"/> class based on the specified byte array.
+            </summary>
+            <param name="_Array">The array of bytes to use as the stream's content.</param>
+            <param name="_Writable">Indicates whether the stream should be writable. Default is true.</param>
+            <remarks>
+            Creates a stream containing the data from the provided byte array. The array's contents are copied
+            to the internal buffer.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when array is null.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.#ctor(GUPS.Assets.Editor.Numeric.LongArray{System.Byte},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongMemoryStream"/> class using an existing LongArray{byte}.
+            </summary>
+            <param name="_LongArray">The LongArray{byte} to use as the stream's buffer.</param>
+            <param name="_Writable">Indicates whether the stream should be writable. Default is true.</param>
+            <remarks>
+            Creates a stream that directly uses the provided LongArray{byte} as its buffer.
+            Changes to the stream will affect the original array and vice versa.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when longArray is null.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.#ctor(System.Collections.Generic.IList{System.Byte[]},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GUPS.Assets.Editor.Numeric.LongMemoryStream"/> class from a list of byte arrays.
+            </summary>
+            <param name="_Chunks">The list of byte arrays to combine into the stream.</param>
+            <param name="_Writable">Indicates whether the stream should be writable. Default is true.</param>
+            <remarks>
+            Creates a stream by combining multiple byte arrays into a single continuous buffer.
+            The data from all chunks is copied into a new internal buffer.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown when chunks is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when chunks is empty or contains null arrays.</exception>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.Buffer">
+            <summary>
+            Gets the underlying LongArray{byte} buffer used by this stream.
+            </summary>
+            <remarks>
+            Provides direct access to the underlying buffer. Care should be taken when modifying
+            the buffer directly as it may affect the stream's integrity.
+            </remarks>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.Capacity">
+            <summary>
+            Gets the current capacity of the stream's buffer.
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.CanRead">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.CanSeek">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.CanWrite">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.Length">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.Position">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.EnsureCapacity(System.Int64)">
+            <summary>
+            Ensures that the stream's capacity is at least the specified value.
+            </summary>
+            <param name="_Minimum">The minimum required capacity.</param>
+            <remarks>
+            If the current capacity is less than the specified minimum, the capacity is increased to the larger of:
+            - The specified minimum
+            - The current capacity multiplied by the growth factor
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Flush">
+            <summary>
+            Flushes any buffers for this stream.
+            </summary>
+            <remarks>
+            This method has no effect for this memory-based stream as all operations are performed directly in memory.
+            It is included to satisfy the Stream abstract class requirements.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the stream and advances the position within the stream by the number of bytes read.
+            </summary>
+            <param name="_Buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the current source.</param>
+            <param name="_Offset">The zero-based byte offset in buffer at which to begin storing the data read from the current stream.</param>
+            <param name="_Count">The maximum number of bytes to be read from the current stream.</param>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available,
+            or zero (0) if the end of the stream has been reached.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when buffer is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when offset or count is negative.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the sum of offset and count is larger than the buffer length.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Sets the position within the current stream.
+            </summary>
+            <param name="_Offset">A byte offset relative to the origin parameter.</param>
+            <param name="_Origin">A value of type SeekOrigin indicating the reference point used to obtain the new position.</param>
+            <returns>The new position within the current stream.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when origin is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when seeking is attempted before the beginning of the stream.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.SetLength(System.Int64)">
+            <summary>
+            Sets the length of the current stream.
+            </summary>
+            <param name="_Value">The desired length of the current stream in bytes.</param>
+            <remarks>
+            If the specified value is less than the current length, the stream is truncated.
+            If the specified value is greater than the current length, the stream is extended and the additional bytes are initialized to zero.
+            </remarks>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The specified length is negative.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.
+            </summary>
+            <param name="_Buffer">An array of bytes. This method copies count bytes from buffer to the current stream.</param>
+            <param name="_Offset">The zero-based byte offset in buffer at which to begin copying bytes to the current stream.</param>
+            <param name="_Count">The number of bytes to be written to the current stream.</param>
+            <remarks>
+            The stream will automatically resize if necessary to accommodate the written data.
+            </remarks>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when buffer is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when offset or count is negative.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the sum of offset and count is larger than the buffer length.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.WriteByte(System.Byte)">
+            <summary>
+            Writes a byte to the current position in the stream.
+            </summary>
+            <param name="_Value">The byte to write to the stream.</param>
+            <remarks>
+            The stream will automatically resize if necessary to accommodate the written data.
+            </remarks>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.TrimExcess">
+            <summary>
+            Reduces the capacity of the stream to match its current length.
+            </summary>
+            <remarks>
+            This method can be used to minimize the memory usage of the stream by releasing any unused capacity.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.ToLongArray">
+            <summary>
+            Converts the stream's contents to a LongArray{byte}.
+            </summary>
+            <returns>A new LongArray{byte} containing a copy of the stream's contents.</returns>
+            <remarks>
+            This method creates a new LongArray and copies all data from the stream into it.
+            The entire stream's contents are copied regardless of the current position.
+            This method is more efficient for large data sets as it maintains the chunked structure.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.ToArray">
+            <summary>
+            Converts the stream's contents to a standard byte array.
+            </summary>
+            <returns>A new byte array containing a copy of the stream's contents.</returns>
+            <remarks>
+            This method creates a new array and copies all data from the stream into it.
+            The entire stream's contents are copied regardless of the current position.
+            Note: This method is limited by the maximum size of a standard .NET array (2GB).
+            For larger data sets, use ToLongArray() instead.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">Thrown when the stream length exceeds the maximum size of a standard array.</exception>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the Stream and optionally releases the managed resources.
+            </summary>
+            <param name="_Disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            <remarks>
+            This implementation has no unmanaged resources to release.
+            The base class's Dispose method is called to ensure proper cleanup.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.Clone">
+            <summary>
+            Creates a new stream that references the same underlying data as the current stream.
+            </summary>
+            <returns>A new LongMemoryStream that references the same underlying data.</returns>
+            <remarks>
+            The new stream will share the same buffer as the current stream but will maintain its own position.
+            Changes to one stream will affect the other as they share the same underlying data.
+            </remarks>
+        </member>
+        <member name="M:GUPS.Assets.Editor.Numeric.LongMemoryStream.ContentEquals(GUPS.Assets.Editor.Numeric.LongMemoryStream)">
+            <summary>
+            Determines whether the contents of this stream are equal to another stream.
+            </summary>
+            <param name="_Other">The stream to compare with the current stream.</param>
+            <returns>true if the contents of both streams are equal; otherwise, false.</returns>
+            <remarks>
+            This method compares the actual contents of the streams, regardless of their current positions.
+            The positions of both streams remain unchanged after the comparison.
+            </remarks>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Numeric.LongMemoryStream.IsEndOfStream">
+            <summary>
+            Gets a value indicating whether the current stream position is at the end of the stream.
+            </summary>
+        </member>
+        <member name="T:GUPS.Assets.Editor.Version.IVersionAble`1">
+            <summary>
+            The class is version able.
+            </summary>
+            <typeparam name="TVersionFormat"></typeparam>
+        </member>
+        <member name="P:GUPS.Assets.Editor.Version.IVersionAble`1.Version">
+            <summary>
+            Current version.
+            </summary>
+        </member>
+    </members>
+</doc>

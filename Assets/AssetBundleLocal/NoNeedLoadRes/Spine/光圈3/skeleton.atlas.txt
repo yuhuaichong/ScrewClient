@@ -1,0 +1,5 @@
+skeleton.png
+size:402,402
+filter:Linear,Linear
+image.png
+bounds:0,1,402,401

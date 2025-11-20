@@ -1,0 +1,15 @@
+skeleton.png
+size:269,269
+filter:Linear,Linear
+pma:true
+扫光
+bounds:2,112,234,155
+排名1
+bounds:2,3,87,107
+offsets:20,11,130,128
+排名2
+bounds:91,3,87,107
+offsets:20,11,130,128
+排名3
+bounds:180,3,87,107
+offsets:20,11,130,128

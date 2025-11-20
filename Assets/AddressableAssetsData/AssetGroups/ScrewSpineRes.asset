@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ScrewSpineRes
+  m_EditorClassIdentifier: 
+  m_GroupName: ScrewSpineRes
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cfece6112c9b8794c8e93a6621aa9542
+  m_SerializeEntries:
+  - m_GUID: 18d083a2900a3a24d8e1223252e0f428
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u7070\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4affc15c9bbc6db4c9c14dc6ca7b9e81
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u7EFF\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51bdf7d3aa9cac945bbed056d28824ec
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u84DD\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c4d96522d9582649ae63ee2854dc503
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u7C89\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b274c0588e1343478736ef71822cc84
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u68D5\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90b768d60f9729e48a18e702a089e481
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u6D45\u84DD\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93b202db3cdb9014490eaa3d21e9636e
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u9EC4\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e062ee6323fc3a944b326f91d6954542
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u6A59\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e13f0972120f1b645bc4eedf86f53bc3
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u7D2B\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e20909c58735a1745bda2fcd93e5bf48
+    m_Address: "Assets/AssetBundleLocal/NoNeedLoadRes/Spine/\u7EA2\u8272/skeleton_SkeletonData.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2544409b6a867e4ea6e197d828b9fd6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 08bcb194a09cc784b9260a51f5a82edd, type: 2}
+    - {fileID: 11400000, guid: f1639329f4a452640aa86ad56deb0765, type: 2}

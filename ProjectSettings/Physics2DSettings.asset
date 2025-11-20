@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!19 &1
+Physics2DSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Gravity: {x: 0, y: -14.7}
+  m_DefaultMaterial: {fileID: 0}
+  m_VelocityIterations: 8
+  m_PositionIterations: 3
+  m_BounceThreshold: 1
+  m_MaxLinearCorrection: 0.2
+  m_MaxAngularCorrection: 8
+  m_MaxTranslationSpeed: 100
+  m_MaxRotationSpeed: 360
+  m_BaumgarteScale: 0.2
+  m_BaumgarteTimeOfImpactScale: 0.75
+  m_TimeToSleep: 0.5
+  m_LinearSleepTolerance: 0.01
+  m_AngularSleepTolerance: 2
+  m_DefaultContactOffset: 0.01
+  m_ContactThreshold: 0
+  m_JobOptions:
+    serializedVersion: 2
+    useMultithreading: 0
+    useConsistencySorting: 0
+    m_InterpolationPosesPerJob: 100
+    m_NewContactsPerJob: 30
+    m_CollideContactsPerJob: 100
+    m_ClearFlagsPerJob: 200
+    m_ClearBodyForcesPerJob: 200
+    m_SyncDiscreteFixturesPerJob: 50
+    m_SyncContinuousFixturesPerJob: 50
+    m_FindNearestContactsPerJob: 100
+    m_UpdateTriggerContactsPerJob: 100
+    m_IslandSolverCostThreshold: 100
+    m_IslandSolverBodyCostScale: 1
+    m_IslandSolverContactCostScale: 10
+    m_IslandSolverJointCostScale: 10
+    m_IslandSolverBodiesPerJob: 50
+    m_IslandSolverContactsPerJob: 50
+  m_SimulationMode: 0
+  m_SimulationLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxSubStepCount: 4
+  m_MinSubStepFPS: 30
+  m_UseSubStepping: 0
+  m_UseSubStepContacts: 0
+  m_QueriesHitTriggers: 1
+  m_QueriesStartInColliders: 1
+  m_CallbacksOnDisable: 1
+  m_ReuseCollisionCallbacks: 1
+  m_AutoSyncTransforms: 1
+  m_GizmoOptions: 10
+  m_LayerCollisionMatrix: ffffffffffffffffffffffffffffffffffffffffffffffff7f000040bf0000403f0100403f0200403f0400403f0800403f1000403f2000403f4000403f8000403f0001c03f0002c03f0004c03f0008c03f0010c03f0020c03f0040c03f0080c03f0000c13f0000c23f0000c43f0000c83f0000d03f0000e0ffffffff3f00ffff

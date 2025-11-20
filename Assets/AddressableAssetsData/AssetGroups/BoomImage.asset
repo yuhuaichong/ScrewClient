@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BoomImage
+  m_EditorClassIdentifier: 
+  m_GroupName: BoomImage
+  m_GUID: ef787899d7a751a4ab8114fe15ddf168
+  m_SerializeEntries:
+  - m_GUID: 31f59ded56414e0299802d1c05b5acdf
+    m_Address: Bomb_dark_blue_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3dbb7df43ebc42d4b58c7e590ea0e84e
+    m_Address: Bomb_pink_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4069ec5009dd412b9b8b4f7ce1742124
+    m_Address: Bomb_orange_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4390ca60c7504faaa2c1f6b6b5d72022
+    m_Address: Bomb_dark_purple_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bbe54fa641241b391206a759721d900
+    m_Address: Bomb_red_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a3294f1b8ee4c3fa80601299686d3e3
+    m_Address: Bomb_grey_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a432e6b7a1824a3884688179d3b295ba
+    m_Address: Bomb_lightblue_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7ff2f6d43ac4e858c549b0019cf37e0
+    m_Address: Bomb_yellow_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8caa2cc96c94e83bcaa65745cd75377
+    m_Address: Bomb_green_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e410af5b06c548d3b0ad74924011b439
+    m_Address: Bomb_lightpurple_t
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BoomImage
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c2544409b6a867e4ea6e197d828b9fd6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e89213b3938ba7b48816a98b6c243c63, type: 2}
+    - {fileID: 11400000, guid: e8ce906d9bdfae44aa04747f7a5e2155, type: 2}
